@@ -12,6 +12,7 @@ A **Lovable-like** application for generating beautiful static websites using AI
 - 📝 **Code Editor** - Monaco editor with syntax highlighting and code editing
 - 📱 **Responsive Design** - Preview in desktop, tablet, and mobile viewports
 - 📥 **Export Functionality** - Download generated HTML files instantly
+- 🔗 **Upload to Irys** - Upload generated websites to Irys testnet datachain
 - 🎯 **Static Only** - Generates self-contained HTML with embedded CSS and JavaScript
 - 🚫 **No Dependencies** - Creates vanilla web code without external libraries
 
@@ -83,6 +84,12 @@ Click on pre-made prompts like:
 - Click "Download" in the code editor
 - Get a complete HTML file ready for hosting
 
+### 6. **Upload to Irys Datachain**
+- Click "Upload to Irys" in the header
+- Your website will be uploaded to Irys testnet
+- Get permanent, decentralized hosting with copyable URLs
+- View your upload on the Irys explorer
+
 ## 💡 Example Prompts
 
 Here are some example prompts to get you started:
@@ -93,22 +100,23 @@ Here are some example prompts to get you started:
 - **"Create a blog post layout with a sidebar and comment section"**
 - **"Build a product showcase page with image gallery and testimonials"**
 
-## 🔧 Configuration
+## 🔧 Environment Variables
 
-### Environment Variables
+Create a `.env.local` file with:
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `NEXT_PUBLIC_GEMINI_API_KEY` | Your Google Gemini API key | Yes |
-| `NEXT_PUBLIC_APP_NAME` | App name (default: Iryscode) | No |
-| `NEXT_PUBLIC_APP_VERSION` | App version | No |
+```bash
+# Required: Google Gemini API key
+NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
 
-### Getting a Gemini API Key
+# Required for Upload to Irys feature: Ethereum testnet private key  
+IRYS_PRIVATE_KEY=your_ethereum_private_key_here
+```
 
-1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Sign in with your Google account
-3. Click "Create API Key"
-4. Copy the key and add it to your `.env.local` file
+**Setup Instructions:**
+1. **Gemini API**: Get from [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. **Irys Upload**: Create testnet wallet → Get testnet ETH from [Irys Faucet](https://irys.xyz/faucet)
+
+⚠️ **Security**: Never use mainnet private keys or keys with real funds
 
 ## 📁 Project Structure
 

@@ -13,7 +13,7 @@ interface CodeEditorProps {
 
 export default function CodeEditor({ code, onChange, showPreview = false, onPreviewToggle }: CodeEditorProps) {
   const [copied, setCopied] = useState(false);
-  const editorRef = useRef<any>(null);
+  const editorRef = useRef<any>(null); // eslint-disable-line @typescript-eslint/no-explicit-any
 
   const handleCopy = async () => {
     try {
@@ -134,7 +134,7 @@ export default function CodeEditor({ code, onChange, showPreview = false, onPrev
               automaticLayout: true,
               tabSize: 2
             }}
-            onMount={(editor, monaco) => {
+            onMount={(editor) => {
               console.log('Monaco Editor mounted successfully');
               editorRef.current = editor;
               
@@ -183,7 +183,7 @@ export default function CodeEditor({ code, onChange, showPreview = false, onPrev
               <h3 className="text-xl font-semibold text-gray-700 mb-3">Ready to Create Something Amazing?</h3>
               <p className="text-sm text-gray-600 mb-4 leading-relaxed">
                 Your generated code will appear here with beautiful syntax highlighting. 
-                I'll create modern, responsive websites with no external images - just pure CSS magic.
+                I&apos;ll create modern, responsive websites with no external images - just pure CSS magic.
               </p>
               <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
                 <span>✨ 2025 Design</span>

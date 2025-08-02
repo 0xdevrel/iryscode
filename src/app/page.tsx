@@ -94,7 +94,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col h-screen bg-gray-50">
-      <Header onClear={handleClearAll} />
+      <Header onClear={handleClearAll} generatedCode={generatedCode} />
       <div ref={containerRef} className="flex flex-1 overflow-hidden h-full relative">
         <div style={{ width: chatWidth }} className="flex-shrink-0">
           <ChatSidebar 

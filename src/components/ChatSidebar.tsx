@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Send, MessageSquare, Loader2, Sparkles } from 'lucide-react';
+import { Send, MessageSquare, Loader2 } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -96,7 +96,7 @@ export default function ChatSidebar({ onPromptSubmit, isGenerating }: ChatSideba
         timestamp: new Date()
       };
       setMessages(prev => [...prev, assistantMessage]);
-    } catch (error) {
+    } catch {
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         type: 'assistant',

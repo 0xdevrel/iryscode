@@ -136,7 +136,7 @@ Generate a complete, self-contained HTML file that fulfills the user's request. 
         accumulatedCode += chunkText;
         
         // Clean up the accumulated response
-        let cleanedCode = accumulatedCode
+        const cleanedCode = accumulatedCode
           .replace(/```html\n?/g, '')
           .replace(/```\n?/g, '')
           .trim();
