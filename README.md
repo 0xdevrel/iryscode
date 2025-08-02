@@ -2,7 +2,7 @@
 
 A **Lovable-like** application for generating beautiful static websites using AI. Simply describe what you want to build, and Iryscode will generate complete HTML, CSS, and JavaScript code using Google Gemini Flash 2.5.
 
-![Iryscode Demo](https://via.placeholder.com/800x400/667eea/white?text=Iryscode+-+AI+Static+Site+Generator)
+![Iryscode Demo](public/iryscode.png)
 
 ## ✨ Features
 
