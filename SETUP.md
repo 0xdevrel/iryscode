@@ -16,7 +16,7 @@
 
 2. Edit `.env.local` and replace `your_gemini_api_key_here` with your actual API key:
    ```
-   NEXT_PUBLIC_GEMINI_API_KEY=your_actual_api_key_here
+   GEMINI_API_KEY=your_actual_api_key_here
    ```
 
 ## Step 3: Start the Application

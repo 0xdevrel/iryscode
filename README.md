@@ -48,7 +48,7 @@ A **Lovable-like** application for generating beautiful static websites using AI
    
    Add your Google Gemini API key to `.env.local`:
    ```
-   NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
+   GEMINI_API_KEY=your_gemini_api_key_here
    ```
 
 3. **Start the development server:**
@@ -105,8 +105,8 @@ Here are some example prompts to get you started:
 Create a `.env.local` file with:
 
 ```bash
-# Required: Google Gemini API key
-NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
+# Required: Google Gemini API key (server-side only)
+GEMINI_API_KEY=your_gemini_api_key_here
 
 # Required for Upload to Irys feature: Ethereum testnet private key  
 IRYS_PRIVATE_KEY=your_ethereum_private_key_here

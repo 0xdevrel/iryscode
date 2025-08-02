@@ -5,6 +5,7 @@ import ChatSidebar from '@/components/ChatSidebar';
 import CodeEditor from '@/components/CodeEditor';
 import PreviewPane from '@/components/PreviewPane';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { generateCode } from '@/lib/gemini';
 
 export default function Home() {
@@ -131,6 +132,7 @@ export default function Home() {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }
