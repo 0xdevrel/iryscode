@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   description: "Generate beautiful static websites using AI. Create HTML, CSS, and JavaScript with natural language prompts powered by Google Gemini.",
   keywords: ["AI", "static site generator", "HTML", "CSS", "JavaScript", "Gemini", "web development"],
   authors: [{ name: "Iryscode Team" }],
+  icons: {
+    icon: "/irys.png",
+    shortcut: "/irys.png",
+    apple: "/irys.png",
+  },
   openGraph: {
     title: "Iryscode - AI Static Site Generator",
     description: "Generate beautiful static websites using AI",

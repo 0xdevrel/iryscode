@@ -22,7 +22,7 @@ export default function Header({ onClear }: HeaderProps) {
         </div>
         <div>
           <h1 className="text-xl font-bold text-gray-900">Iryscode</h1>
-          <p className="text-xs text-gray-500">Static Site Generator</p>
+          <p className="text-xs text-gray-500">Build anything with Irys</p>
         </div>
       </div>
       
