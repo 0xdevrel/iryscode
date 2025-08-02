@@ -1,36 +1,194 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Iryscode - Static Site Generator
 
-## Getting Started
+A **Lovable-like** application for generating beautiful static websites using AI. Simply describe what you want to build, and Iryscode will generate complete HTML, CSS, and JavaScript code using Google Gemini Flash 2.5.
 
-First, run the development server:
+![Iryscode Demo](https://via.placeholder.com/800x400/667eea/white?text=Iryscode+-+AI+Static+Site+Generator)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- 🤖 **AI-Powered Generation** - Uses Google Gemini Flash 2.5 for intelligent code generation
+- 💬 **Chat Interface** - Natural language prompts to describe your website
+- 🎨 **Live Preview** - Real-time preview with responsive design testing
+- 📝 **Code Editor** - Monaco editor with syntax highlighting and code editing
+- 📱 **Responsive Design** - Preview in desktop, tablet, and mobile viewports
+- 📥 **Export Functionality** - Download generated HTML files instantly
+- 🎯 **Static Only** - Generates self-contained HTML with embedded CSS and JavaScript
+- 🚫 **No Dependencies** - Creates vanilla web code without external libraries
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Code Editor**: Monaco Editor
+- **AI**: Google Gemini Flash 2.5
+- **Icons**: Lucide React
+- **Build Tool**: Turbopack
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+ installed
+- Google Gemini API key ([Get one here](https://makersuite.google.com/app/apikey))
+
+### Installation
+
+1. **Clone and install dependencies:**
+   ```bash
+   cd iryscode
+   npm install
+   ```
+
+2. **Set up environment variables:**
+   ```bash
+   cp .env.local.example .env.local
+   ```
+   
+   Add your Google Gemini API key to `.env.local`:
+   ```
+   NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🎯 How to Use
+
+### 1. **Start Chatting**
+- Type your website idea in the chat sidebar
+- Be specific about what you want (e.g., "Create a modern portfolio website with a hero section, about section, and contact form")
+
+### 2. **Quick Start Prompts**
+Click on pre-made prompts like:
+- "Landing page"
+- "Portfolio" 
+- "Blog post"
+- "Product showcase"
+
+### 3. **Edit Code**
+- Use the Monaco code editor to fine-tune the generated HTML
+- Real-time preview updates as you type
+
+### 4. **Test Responsiveness**
+- Switch between desktop, tablet, and mobile views
+- Use the refresh button to reload the preview
+
+### 5. **Export Your Site**
+- Click "Download" in the code editor
+- Get a complete HTML file ready for hosting
+
+## 💡 Example Prompts
+
+Here are some example prompts to get you started:
+
+- **"Create a modern landing page for a tech startup with a hero section, features, and pricing"**
+- **"Build a personal portfolio website with a dark theme and smooth animations"**
+- **"Design a restaurant menu page with elegant styling and interactive elements"**
+- **"Create a blog post layout with a sidebar and comment section"**
+- **"Build a product showcase page with image gallery and testimonials"**
+
+## 🔧 Configuration
+
+### Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `NEXT_PUBLIC_GEMINI_API_KEY` | Your Google Gemini API key | Yes |
+| `NEXT_PUBLIC_APP_NAME` | App name (default: Iryscode) | No |
+| `NEXT_PUBLIC_APP_VERSION` | App version | No |
+
+### Getting a Gemini API Key
+
+1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Sign in with your Google account
+3. Click "Create API Key"
+4. Copy the key and add it to your `.env.local` file
+
+## 📁 Project Structure
+
+```
+iryscode/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx          # Root layout
+│   │   ├── page.tsx            # Main application page
+│   │   └── globals.css         # Global styles
+│   ├── components/
+│   │   ├── Header.tsx          # App header
+│   │   ├── ChatSidebar.tsx     # Chat interface
+│   │   ├── CodeEditor.tsx      # Monaco code editor
+│   │   └── PreviewPane.tsx     # Live preview iframe
+│   └── lib/
+│       └── gemini.ts           # Gemini API integration
+├── public/                     # Static assets
+├── .env.local                  # Environment variables
+└── package.json               # Dependencies
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 What Can It Generate?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Iryscode can create any static website including:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ✅ Landing pages with modern designs
+- ✅ Portfolio websites with animations
+- ✅ Business websites with contact forms
+- ✅ Blog layouts and article pages
+- ✅ Product showcase pages
+- ✅ Event pages and invitations
+- ✅ Restaurant menus and pricing tables
+- ✅ Team member showcases
+- ✅ FAQ sections and documentation
+- ✅ Interactive components with JavaScript
 
-## Learn More
+### Limitations
 
-To learn more about Next.js, take a look at the following resources:
+- ❌ No server-side functionality
+- ❌ No database connections
+- ❌ No external API calls (except web APIs)
+- ❌ No image generation
+- ❌ No external dependencies/libraries
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Available Scripts
 
-## Deploy on Vercel
+- `npm run dev` - Start development server with Turbopack
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Inspired by [Lovable](https://lovable.dev) for the user experience
+- Built with [Google Gemini](https://deepmind.google/technologies/gemini/) for AI code generation
+- Uses [Monaco Editor](https://microsoft.github.io/monaco-editor/) for code editing
+
+## 📞 Support
+
+If you have any questions or issues:
+
+1. Check the [Issues](https://github.com/yourusername/iryscode/issues) page
+2. Create a new issue with a detailed description
+3. Include error messages and steps to reproduce
+
+---
+
+**Happy coding! 🎉** Build amazing static websites with the power of AI.
