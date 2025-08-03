@@ -6,6 +6,7 @@ import CodeEditor from '@/components/CodeEditor';
 import PreviewPane from '@/components/PreviewPane';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import MobileRedirect from '@/components/MobileRedirect';
 import { generateCode } from '@/lib/gemini';
 
 export default function Home() {
@@ -94,45 +95,48 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gray-50">
-      <Header onClear={handleClearAll} generatedCode={generatedCode} />
-      <div ref={containerRef} className="flex flex-1 overflow-hidden h-full relative">
-        <div style={{ width: chatWidth }} className="flex-shrink-0">
-          <ChatSidebar 
-            onPromptSubmit={handleCodeGeneration}
-            isGenerating={isGenerating}
-          />
-        </div>
-        
-        {/* Resize Handle */}
-        <div
-          className={`w-1 bg-gray-300 hover:bg-blue-500 cursor-col-resize flex-shrink-0 transition-colors ${
-            isResizing ? 'bg-blue-500' : ''
-          }`}
-          onMouseDown={handleMouseDown}
-          title="Drag to resize"
-        />
-        
-        <div className="flex-1 min-w-0 h-full">
-          <CodeEditor 
-            code={generatedCode}
-            onChange={setGeneratedCode}
-            showPreview={showPreview}
-            onPreviewToggle={setShowPreview}
-          />
-        </div>
-        
-        {showPreview && (
-          <div className="flex-1 min-w-0 border-l border-gray-200">
-            <PreviewPane 
-              code={generatedCode} 
-              onClose={() => setShowPreview(false)}
-              isPanel={true}
+    <>
+      <MobileRedirect />
+      <div className="flex flex-col h-screen bg-gray-50">
+        <Header onClear={handleClearAll} generatedCode={generatedCode} />
+        <div ref={containerRef} className="flex flex-1 overflow-hidden h-full relative">
+          <div style={{ width: chatWidth }} className="flex-shrink-0">
+            <ChatSidebar 
+              onPromptSubmit={handleCodeGeneration}
+              isGenerating={isGenerating}
             />
           </div>
-        )}
+          
+          {/* Resize Handle */}
+          <div
+            className={`w-1 bg-gray-300 hover:bg-blue-500 cursor-col-resize flex-shrink-0 transition-colors ${
+              isResizing ? 'bg-blue-500' : ''
+            }`}
+            onMouseDown={handleMouseDown}
+            title="Drag to resize"
+          />
+          
+          <div className="flex-1 min-w-0 h-full">
+            <CodeEditor 
+              code={generatedCode}
+              onChange={setGeneratedCode}
+              showPreview={showPreview}
+              onPreviewToggle={setShowPreview}
+            />
+          </div>
+          
+          {showPreview && (
+            <div className="flex-1 min-w-0 border-l border-gray-200">
+              <PreviewPane 
+                code={generatedCode} 
+                onClose={() => setShowPreview(false)}
+                isPanel={true}
+              />
+            </div>
+          )}
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }
